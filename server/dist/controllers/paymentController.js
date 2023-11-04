@@ -21,15 +21,19 @@ const checkout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         line_items: [
             {
                 price_data: {
-                    currency: "usd",
+                    currency: "inr",
                     product_data: {
                         name: "Macbook Air M1",
                     },
-                    unit_amount: 50 * 100,
+                    unit_amount: 500 * 100,
                 },
                 quantity: 1,
             },
         ],
+        billing_address_collection: "required",
+        shipping_address_collection: {
+            allowed_countries: ["IN"],
+        },
         mode: "payment",
         success_url: `${YOUR_DOMAIN}/success`,
         cancel_url: `${YOUR_DOMAIN}/cancel`,
